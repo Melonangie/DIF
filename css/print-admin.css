@@ -1,0 +1,153 @@
+/* 
+    Document   : print-admin
+    Created on : 05-may-2013, 10:58:58
+    Author     : angie
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    html,body {margin:0; padding:0; line-height: 1.4em; word-spacing:1px; letter-spacing:0.2px; font: 12px Arial, Helvetica,"Lucida Grande", serif;}
+    .container-narrow, section, section.row-fluid {
+        width: auto; 
+        padding: 0;
+        border: 0;
+        float: none !important;
+    }  
+    footer, .no-print, header{display: none}
+    .nomargin-print{margin-top: 0;}
+
+    /* Display the URL of the site so that the user knows where the printout came from */
+    .title-print{
+        font: bold 24pt georgia, serif; 
+        text-align: center; 
+        margin-bottom: 5px;
+    }
+    h1, h2, h3, h3, h4 {
+        page-break-after: avoid;
+        font-family: georgia, serif;
+    }
+    h1 {font-size: 24pt}
+    h2 {font-size: 14pt; margin-top: 25px}
+    a, a:visited {
+        text-decoration: underline;
+        color: #000;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+    tr, img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+        border: 0;
+    }
+
+    @page {
+        margin: 0.3in;
+        size:letter;
+    }
+
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* By default links are blue. For optimal legibility change them to black */
+    p a {color: #000;word-wrap: break-word;}
+
+    /* Show the URL after each link, whereby internal links are preceeded by the site's URL */
+    p a:after {
+        content: " (http://www.dif-tijuana.gob.mx/" attr(href) ")";
+        font-size: 80%;
+        word-wrap: break-word;
+    }
+
+    /* External links don't get this treatment */
+    p a[href^="http://"]:after, p a[href^="https://"]:after {
+        content: " (" attr(href) ")";
+    }
+
+    /* Append the source of the citation */
+    q:after {content: " (" attr(cite) ")"}
+
+    /*    table*/
+    .fg-toolbar, .DataTables_sort_icon{display: none}
+    .editable{border: none; text-align: center;}
+    td {
+        font-size: 12px;
+    }
+
+    /*impresion de dimplomas*/
+    .only-print{
+        display: block;
+    }
+    #page-break{
+        page-break-after : always;
+    }
+    #line{
+        width: 100%;
+    }
+    .el{
+        width: 50%;
+        margin-top: 2.5in;
+        text-align: center;
+        display: inline-block;
+    }
+    .ella{
+        width: 50%;
+        margin-top: 2.5in;
+        text-align: center;
+        display: inline-block;
+    }
+    .dia{
+        margin-top: 1.9in;
+        margin-left: 1.7in;
+        font-size: 10px;
+        font-weight: bold;
+        display: inline-block;
+    }
+    .mes{
+        margin-left: .29in;
+        font-size: 10px;
+        font-weight: bold;
+        display: inline-block;
+    }
+    .ano{
+        margin-left: .9in;
+        font-size: 10px;
+        font-weight: bold;
+        display: inline-block;
+    }
+    .folio{
+        margin-left: 3.7in;
+        font-size: 10px;
+        font-weight: bold;
+        display: inline-block;
+    }
+}
+
+@media print,
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+

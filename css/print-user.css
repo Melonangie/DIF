@@ -1,0 +1,98 @@
+/* 
+    Document   : user-print
+    Created on : 02-may-2013, 10:37:09
+    Author     : angie
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    html, body{ font: 100%/1.5 georgia, serif; }
+    .container-narrow, section, section.row-fluid {
+        width: auto; 
+        padding: 0;
+        border: 0;
+        float: none !important;
+    }  /* Display the URL of the site so that the user knows where the printout came from */
+    header.row-fluid .span8 :after {display: block; font: 60%/1.5 georgia, serif; content: "http://www.dif-tijuana.gob.mx"}
+    header.row-fluid .span8 :before {
+        display: block;
+        font: 12pt/1.5 georgia, serif; 
+        content: "Gracias por registrarse en linea. Porfavor acuda a su cita a tiempo y no olvide llevar esta hoja.";
+        margin: 10px;
+        border: 1px solid #bbb;
+        padding: 3px 5px;
+        font-style: italic;
+    }
+    header.row-fluid .span8{display: block;width: 100%;text-align: center;}
+    footer, .no-print, header.row-fluid .span3{display: none}
+    header h1{font: bold 24pt georgia, serif;}
+    h2, h3 {
+        page-break-after: avoid;
+    }
+    h1 {font-size: 24pt}
+    h2 {font-size: 14pt; margin-top: 25px}
+    a, a:visited {
+        text-decoration: underline;
+        color: #000;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+    tr, img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+        border: 0;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* By default links are blue. For optimal legibility change them to black */
+    p a {color: #000;word-wrap: break-word;}
+
+    /* Show the URL after each link, whereby internal links are preceeded by the site's URL */
+    p a:after {
+        content: " (http://www.dif-tijuana.gob.mx/" attr(href) ")";
+        font-size: 80%;
+        word-wrap: break-word;
+    }
+
+    /* External links don't get this treatment */
+    p a[href^="http://"]:after, p a[href^="https://"]:after {
+        content: " (" attr(href) ")";
+    }
+
+    /* Append the source of the citation */
+    q:after {content: " (" attr(cite) ")"}
+}
+@media print,
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}

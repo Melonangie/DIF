@@ -1,0 +1,7 @@
+<?php
+
+/**
+ * Redirige
+ */
+die('Prohibido')
+?>
